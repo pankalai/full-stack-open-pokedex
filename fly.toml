@@ -26,8 +26,8 @@ primary_region = 'arn'
   strategy = "canary"
 
 [[http_service.checks]]
-  grace_period = "10s"
-  interval = "30s"
+  grace_period = "30s"
+  interval = "15s"
   method = "GET"
   timeout = "5s"
   path = "/health"
