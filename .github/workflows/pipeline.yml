@@ -45,15 +45,11 @@ jobs:
             FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
       
     tag_release:
+      if: ${{ github.event_name == 'push' }}
       needs: [simple_deployment_pipeline]
       runs-on: ubuntu-latest
-      permissions:
-        contents: write
-      if: ${{ github.event_name == 'push' }}
       steps:
         - uses: actions/checkout@v4
-          with:
-            fetch-depth: '0'
         - name: Bump version and push tag
           uses: anothrNick/github-tag-action@1.75.0
           env:
