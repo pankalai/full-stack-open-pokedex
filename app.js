@@ -2,7 +2,6 @@
 // eslint-disable-next-line no-undef
 const express = require('express')
 const static_m = express.static
-
 const app = express()
 
 // eslint-disable-next-line no-undef
