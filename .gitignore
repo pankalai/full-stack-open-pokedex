@@ -1,6 +1,8 @@
 dist/
 node_modules/
 
+fly-deploy.yml
+
 # Playwright
 /test-results/
 /playwright-report/
