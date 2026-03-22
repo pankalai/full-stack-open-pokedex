@@ -22,3 +22,7 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         run: echo "$COMMIT_MESSAGES"
+      - name: is to skip
+        env:
+          BOOLEAN_RESULT: ${{ contains(join(github.event.commits.*.message), '#skip') }}
+        run: echo "$COMMIT_MESSAGES"
